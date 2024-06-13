@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Accurate Map System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="https://apis.mapmyindia.com/advancedmaps/v1/662a9fea74ad522ba6524b715af88f42/map_load?v=1.5"></script>
+  <script src="https://apis.mappls.com/advancedmaps/v1/662a9fea74ad522ba6524b715af88f42/map_sdk_plugins?v=3.0"></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      width: 100%;
+      height: calc(100% - 40px);
+      /* Adjust height to accommodate the search bar */
+    }
+
+    #auto {
+      width: 255px;
+      padding: 10px;
+      position: absolute;
+      z-index: 999;
+      top: 10px;
+      left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>9
+  <input type="text" id="auto" name="auto" placeholder="Search places ..." spellcheck="false">
+</body>
+
+
+<script>
+  //Initialize the MapmyIndia map
+  var map = new MapmyIndia.Map("map", {
+    center: [19.12, 72.88],
+    zoomControl: true,
+    hybrid: true,
+    search: true,
+    location: true
+  });
+
+  const searchInput = document.getElementById("auto");
+
+  // Perform Place Search on Enter Key Press
+  searchInput.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      const query = event.target.value;
+      const url = "https://apis.mappls.com/placesearch"; // Example URL for place search
+
+      // Request options for GET method
+      const requestOptions = {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${"736d5652-6361-4b33-98a6-695cfaa4ff79"}`
+        }
+      };
+
+      // Make GET request to perform place search
+      fetch(`${url}?query=${query}`, requestOptions) // Include query in URL
+        .then(response => response.json())
+        .then(results => {
+          console.log("Search Results:", results);
+        })
+        .catch(error => {
+          console.error("Search Error:", error);
+        });
+    }
+  });
+  Marker1 = new mappls.Marker({
+    map: map,
+    position: {
+      "lat": 28.519467,
+      "lng": 77.223150
+    },
+    fitbounds: true,
+    icon_url: 'https://apis.mapmyindia.com/map_v3/1.png'
+  });
+
+</script>
+
+</html>

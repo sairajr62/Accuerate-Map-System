@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <title>Accurate Map System</title>
+</head>
+<style>
+    body {
+        height: 100%;
+        width: 100%;
+        background-image: url(bg\ image\ 2.jpeg);
+        image-rendering: auto;
+        background-repeat: no-repeat;
+    }
+
+    .myimg {
+        height: 500px;
+        width: 500px;
+        position: sticky;
+    }
+
+    a {
+        font-style: normal;
+        font-family: "Alfa Slab One", serif;
+        text-decoration: none;
+        color: #8427b0;
+    }
+
+    .btn1 {
+        margin-left: 680px;
+    }
+
+    .container>a>img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .navbar {
+        display: flex;
+    }
+
+    .navbar>ul>li {
+        text-decoration: none;
+        list-style-type: none;
+    }
+
+    .navbar {
+        width: 100%;
+        background-color: #55555516;
+        overflow: auto;
+    }
+
+    .bgimg {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Navbar links */
+    .navbar a {
+        float: left;
+        text-align: center;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    /* Navbar links on mouse-over */
+    .navbar a:hover {
+        background-color: #00000038;
+    }
+
+
+    /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+    @media screen and (max-width: 500px) {
+        .navbar a {
+            float: none;
+            display: block;
+        }
+    }
+
+    .name {
+        text-align: center;
+        font-family: "Alfa Slab One", serif;
+        animation: myanime 2s;
+        color: antiquewhite;
+    }
+
+    @keyframes myanime {
+        0% {
+            color: goldenrod;
+        }
+
+        50% {
+            color: blanchedalmond;
+        }
+
+        100% {
+            color: rgb(750, 250, 100);
+        }
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <a href="home.html"><i class="fa fa-fw fa-home"></i> Home</a>
+    </div>
+    <h1 class="name">Accurate Map System </h1>
+    <div class="btn1">
+        <button onclick="redirect()">click here to view Map....</button>
+    </div>
+    <div class="bgimg">
+        <img src="webicon.jpeg" alt="Accurate Map System" class="myimg">
+    </div>
+</body>
+<script>
+    function redirect() {
+        location.replace("index.html")
+    }
+</script>
+
+</html>
