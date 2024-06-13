@@ -1,1 +1,1 @@
-# Accuerate-Map-System
+# Accurate-Map-System
